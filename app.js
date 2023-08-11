@@ -4,11 +4,12 @@ const app = express();
 const path = require("path");
 const db = require("@prisma/client");
 const fetch = require("node-fetch-native");
+require('dotenv').config();
 
-const t_bot_key = env("TELEGRAM_BOT_KEY");
-const t_chat_id =  env("TELEGRAM_CHAT_ID");
-const smsc_login = env("SMSC_LOGIN");
-const smsc_passw =  env("SMSC_PASSW");
+const t_bot_key = process.env.TELEGRAM_BOT_KEY;
+const t_chat_id =  process.env.TELEGRAM_CHAT_ID;
+const smsc_login = process.env.SMSC_LOGIN;
+const smsc_passw =  process.env.SMSC_PASSW;
 
 const prisma = new db.PrismaClient();
 
