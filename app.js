@@ -38,13 +38,13 @@ async function messaging() {
         },
     })
 
-    console.log(record);
-
     if (record == null) { return };
 
-    if (record.suspiciousCount > 30 || record.totalCount > 150) {
+    console.log(record);
+
+    if (record.suspiciousCount > 3 || record.totalCount > 99) {
         console.log("send message");
-        await fetch("https://api.telegram.org/bot" + t_bot_key + "/sendMessage?chat_id=" + t_chat_id + "8&text=" + "Подозрительная активность в СМС-центре. Количество сомнительных сообщений сегодня: " + record.suspiciousCount + ". Доставленных сообщений за сегодня: " + record.totalCount)
+        await fetch("https://api.telegram.org/bot" + t_bot_key + "/sendMessage?chat_id=" + t_chat_id + "&text=" + "Подозрительная активность в СМС-центре. Количество сомнительных сообщений сегодня: " + record.suspiciousCount + ". Доставленных сообщений за сегодня: " + record.totalCount)
         alertDate = new Date(getDate());
     }
 }
