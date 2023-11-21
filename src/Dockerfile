@@ -7,11 +7,10 @@ WORKDIR /application
 # copy only package.json, to install dependencies before container started
 COPY package.json /application
 RUN npm install
-# install nodemon to run our application in hot reload mode. [don't use it in production]
-RUN npm install -g nodemon
+RUN npm install -g pm2
 # set work directory with your sources
 WORKDIR /application/src
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD nodemon app.js
+CMD pm2 start app.js
