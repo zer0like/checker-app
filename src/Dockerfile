@@ -11,4 +11,7 @@ RUN npm install
 RUN npm install -g nodemon
 # set work directory with your sources
 WORKDIR /application/src
-CMD ["npx prisma generate", "sleep 20", "nodemon app.js"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["nodemon app.js"]
