@@ -1,5 +1,5 @@
 #!/bin/sh
 
-npx prisma generate && sleep 20 && ls
+npx prisma generate && sleep 10
 
 exec "$@"

@@ -14,4 +14,4 @@ WORKDIR /application/src
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["nodemon app.js"]
+CMD nodemon app.js
