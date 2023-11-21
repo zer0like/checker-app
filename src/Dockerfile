@@ -11,4 +11,4 @@ RUN npm install
 RUN npm install -g nodemon
 # set work directory with your sources
 WORKDIR /application/src
-CMD nodemon app.js
+CMD [ "npx prisma generate" , "nodemon app.js"]
