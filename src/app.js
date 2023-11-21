@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(3000, async () => {
     console.log(` app listening on port port! 3000 /n http://localhost:port`);
+    await smsCenter();
+    await messaging();
     setInterval(async () => {await smsCenter()}, 600000);
     setInterval(async () => { await messaging() }, 300000);
 
