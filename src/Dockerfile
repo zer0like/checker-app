@@ -1,5 +1,5 @@
 # set node image with version
-FROM node:11.11.0
+FROM node:19.9.0
 # create directory
 RUN mkdir -p /application/src
 # set work directory
