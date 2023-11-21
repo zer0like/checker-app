@@ -1,0 +1,12 @@
+# Simple config of 1 service
+version: "3"
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/application/src
+      - ./database:/database
+    ports:
+      - 3000:3000
