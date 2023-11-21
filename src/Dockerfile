@@ -13,4 +13,4 @@ WORKDIR /application/src
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD pm2 start app.js
+CMD node app.js
